@@ -1,0 +1,52 @@
+
+*
+{
+	margin:0;
+	padding:0;
+}
+
+.gallery
+{
+	width:900px;
+	height:370px;
+	margin:10px auto;
+	background:#999;
+    border:1px solid orange;
+    overflow: hidden;
+}
+.slider{  
+    display:block;  
+    width:900px;  
+    height:400px;  
+    margin-left:0;  
+    padding:0;  
+}  
+.slides{  
+    float:left;  
+    list-style-type:none;  
+    width:900px;  
+    height:400px;  
+}  
+/* .slider
+{
+	width:inherit;
+	height:344px;
+	
+} */
+.slider ul
+{
+	/*width:10000px;*/
+	list-style:none;
+	margin-left:0px;
+}
+.slider li
+{
+    float:left;
+}
+
+#slider-nav
+{
+	display:none; /* This is important to hide the buttons if jQuery is Not supported. */
+	margin-top: -10em;
+	cursor: pointer;		
+}

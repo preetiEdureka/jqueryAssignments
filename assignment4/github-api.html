@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Working with GitHUB API</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<style>
+        #result{
+            padding: 50px;
+        }
+    </style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4" id="result"></div>
+    </div>
+
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script src="../bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+    
+<script>
+$.getJSON('https://api.github.com/users/preetiEdureka/repos',function(result)
+{
+    console.log(result);
+    $('#result').append('<p> Repository Name: '+result[0].full_name+'</p>');
+    $('#result').append('<p> Repository Download URL: '+result[0].downloads_url+'</p>');
+    $('#result').append('<p> Repository Deployments URL: '+result[0].deployments_url+'</p>');
+    $('#result').append('<p> Repository Branches URL: '+result[0].branches_url+'</p>');
+    $('#result').append('<p> Owner: <img src='+result[0].owner.avatar_url+'width=100 height=100/></br>'+result[0].owner.login+'- '+result[0].owner.id+'</p>');
+})
+</script>
+</body>
+</html>

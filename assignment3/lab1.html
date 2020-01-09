@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+    <title>Form validation for User Registration</title>
+</head>
+<style>
+.row{
+    padding: 10px;
+}
+input{
+   font-size: 50%;
+}
+
+#alertBox{
+    width: 35%;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: red;
+    position: absolute;
+    top:60px;
+    right: 460px;
+}
+</style>
+<body>
+    <form id="form" action="#" method="GET" role="form">       
+        <h2 class="text-center">User Registration Form </h2>
+        <div class="row">
+            </br></br>
+            <div class="col-sm-2">
+                <label for="name">User Name</label>        
+                <input type="text" name="name" id="username" class="form-control" width="35" required="required" title="Name">       
+                <label for="name"></label>Password</label>        
+                <input type="password" name="password" id="pwd" class="form-control" value="" required="required" title="Password">       
+                <label for="name"></label>Confirm Password</label>        
+                <input type="password" name="confirm-password" id="pwd" class="form-control" value="" required="required" title="Password">       
+                <label for="name">First Name</label>        
+                <input type="text" name="Fname" id="f-name" class="form-control" value="" title="First Name">       
+                <label for="name">Last Name</label>        
+                <input type="text" name="Lname" id="l-name" class="form-control" value="" title="Last Name">       
+            </br></br>
+                <button type="submit" class="btn btn-primary">Submit</button>               
+            </div>
+        </div> 
+    </form>
+    <div class="container" id="alertBox">
+        <p>
+            Cras ultricies ligula sed magna dictum porta. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+
+Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt.
+
+        </p>
+
+    </div>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" integrity="sha256-sPB0F50YUDK0otDnsfNHawYmA5M0pjjUf4TvRJkGFrI=" crossorigin="anonymous"></script>
+    <script src="../bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+    
+<script>
+$(document).ready(function() {
+$('#username').on('keyup', function(){
+    //$('#alertBox').scroll();
+    $('#alertBox').scrollLeft(150);
+    alert($('#alertBox').scrollLeft());
+});
+
+
+$('button[type=submit').on('click',function($event){
+    if($('#username').val().length >10)
+    {
+        alert('User Name cannot be more than 10');
+    }
+    /* var pwd = $('#pwd').val();
+    var passwordRegex = '/^[a-z0-9_-]{6,18}$/'; 
+    console.log(pwd.match(passwordRegex)); */
+
+    var validator = $("#form").validate({
+            rules: {
+                'pwd' : {
+                    minlength : 5
+                },
+                'confirm-password': {
+                    minlength : 5,
+                    equalTo : "#pwd"
+                }
+            },
+            messages: {
+                'pwd': " Enter Password",
+                'confirm-password': " Enter Confirm Password Same as Password"
+            }
+        });
+        if (validator.form()) {
+            console.log('Sucess');
+        }
+        $event.preventDefault();
+});
+});
+</script>
+</body>
+</html>

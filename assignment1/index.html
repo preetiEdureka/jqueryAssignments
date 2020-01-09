@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 1 : JQuery UI</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+<div class="container">
+<p style="margin:10px;display:none">
+    <a href="https:\\www.google.co.in" target="_blank">Google</a>
+</p>
+</br></br></br></br>
+    <form action="#" method="POST" class="form-horizontal" role="form">
+            <div class="form-group">
+                <legend>Personal Details</legend>
+            </div>       
+    
+            <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                   
+                   <label for="Name" class="col-sm-2">Name</label>
+                    <input type="text" id="Name" name="Name"></input>
+                </div>
+            </br></br>
+                <button type="button" id="click" class="btn btn-primary">Click</button>
+                <!-- <div class="col-sm-10 col-sm-offset-2">
+                    <button type="button    " id="greet" class="btn btn-primary">Greet</button>
+                </div> -->
+            </div>
+    </form>
+    <p id="greetText"></p>
+</div>
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+
+<script>
+
+$(document).ready(function(){
+
+$('a').hover(function(){
+    $(this).css('color','red');
+},function(){
+    $(this).css('color','pink');
+});
+$('#click').click(function(){
+    name = $('input[type=text]').val();
+    $('#greetText').text("Hello "+ name);
+})
+});
+</script>
+</body>
+</html>

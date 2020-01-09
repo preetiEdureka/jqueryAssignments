@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <title>Assignment 2</title>
+</head>
+<style>
+body{
+    margin: 50px;
+}
+
+#address{
+
+    margin: 0px 603px 0px 0px; width: 256px; height: 182px;
+}
+
+#updateEmailDOB{
+margin: 5px;
+}
+.form-group{
+    width: 55%;
+}
+.sliding_container{
+
+border: 1px solid black;
+background-color: red;
+width:50%;
+height: 30px;
+}
+.panel{
+display: none;    
+padding:50px;
+width:50%;
+border: 2px solid black;
+background-color: cyan;
+}
+
+.tooltipDiv{
+    background-color: darkmagenta;
+    padding: 10px;
+    width: 8%;
+}
+</style>
+<body>
+
+<form id="actionForm" action="#" method="POST" class="form-horizontal" role="form">
+
+    <div id="form_add" class="form-group">
+        <label for="fr_name">First Name</label>
+        <input type="text" class="form-control" id="fr_name" placeholder="First Name">
+        <label id="ls_name_label" for="ls_name">Last Name</label>
+        <input type="text" class="form-control" id="ls_name" placeholder="Last Name">
+    </div>  
+
+    <button type="button" id="addMoreFields" class="btn btn-primary">Add More Fields</button>
+<div class="tooltipDiv">Hover ToolTip</div>
+</form>
+</br></br></br>
+<div class="sliding_container">
+    Sliding panel
+</div>
+<div class="panel">
+    Test
+</div>
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+<script>
+    $(document).ready(function(){
+
+        $('#addMoreFields').hover(function(){
+            $('.tooltipDiv').animate({'width':'50%'});
+        },function(){
+            $('.tooltipDiv').animate({'width':'8%'});
+        });
+        $('.sliding_container').click(function(){
+            $(".panel").slideToggle(500);
+        });
+        $('#addMoreFields').click(function(){
+            $('#ls_name').remove();
+            $('#ls_name_label').remove();
+            var address = "<label for='address'>Address</label>"+" <textarea class='form-control' id='address' placeholder='Address'/>";
+            var email = "<label for='email'>Email ID</label>"+" <input type='text' class='form-control' id='email' placeholder='Email ID'/>";
+            var dob = "<label for='dob'>Date of Birth</label>"+" <input type='text' class='form-control' id='dob' placeholder='Date Of Birth'/>";
+            //var upBtn = "<button type=\"button\" id=\"updateEmailDOB\" class=\"btn btn-primary\">Update Fields</button>";
+            if($('#address').length == 0)
+            {
+            $('#form_add').append(address);
+            $('#form_add').append(email);
+            $('#form_add').append(dob);
+           // $('#addMoreFields').after(upBtn);
+            }
+            if($('#email').length > 0)
+                {
+                $('#email').attr('type','email');
+                $('#dob').attr('type','date');
+                }
+        });
+        
+        
+    });
+</script>        
+</body>
+</html>

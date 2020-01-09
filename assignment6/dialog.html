@@ -1,0 +1,36 @@
+<!-- /*
+- Develop Google Search Auto Complete using jQuery UI Auto Complete
+- Implement Datepicker from jQuery UI
+*/
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dialog Assignment</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
+</head>
+<body>
+<div class="container">
+    <div style="margin:50px"> 
+        <button id="openDialog" value="Open Dialog">Click here to open dialog</button>
+    </div>
+    <div id="dialog" title="Dialog Title">I am here in the dialog</div>
+</div>
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="../bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+<script>
+    $('#openDialog').on('click',function(){
+    $('#dialog').dialog();
+    });
+</script>
+</body>
+</html>

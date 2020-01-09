@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 4</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<style>
+    p{
+        padding: 20px;
+        border: 1px solid black;
+        margin:50px;
+        font-size: 1em;
+        background-color:darkmagenta;
+        color:white;
+    }
+.slider{  
+    width:900px;  
+    height:400px;  
+    margin: 10%;  
+    margin-left:15%;  
+    overflow:hidden;  
+}  
+.slides{  
+    display:block;  
+    width:6000px;  
+    height:400px;  
+    margin-left:0;  
+    padding:0;  
+}  
+.slide{  
+    float:left;  
+    list-style-type:none;  
+    width:900px;  
+    height:400px;  
+}  
+img{  
+    width:900px;  
+    height:400px;  
+} 
+</style>
+<body>
+<div class="container">
+<p>
+    This is my font plugin...
+</p>
+</div>
+
+<div class="container">
+    <div class="slider">
+        <ul class="slides">
+            <li class='slide'>
+                <a href="#"><img src="../media/digital-marketing.jpg" /></a>
+            </li>
+             
+            <li class='slide'>
+                <img src="../media/email-marketing.jpg" />
+            </li>
+             
+            <li class='slide'>
+                <img src="../media/social-marketing.png" />
+                <p>Designing The Well-Tempered Web</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../jquery-3.4.1.min.js"></script>
+<script src="../bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+<script>
+    /* $.fn.fontStyleChange = function(value){
+        this.css('font-size',value+'em');
+        return this;
+    }
+    $('p').hover(function(){
+        $('p').fontStyleChange(2).animate(
+            {'font-size':'45px' },1000
+        );
+    },function(){$('p').fontStyleChange(2).animate(
+            {'font-size':'20px' },2000
+        )}); */
+$(function()
+{  
+    //value for animation  
+    var width = 900;  
+    var animationSpeed = 1000;  
+    var pause = 3000;  
+    var currentSlide = 1;  
+    //Dom element.   
+    var $slider = $('#slider');  
+    var $sliderAnimation = $slider.find('.slides');  
+    var $slides = $sliderAnimation.find('.slide');  
+  
+    setInterval(function()
+    {  
+         $sliderAnimation.animate({'margin-left': '-='+width}, animationSpeed,"slow", function(){  
+         currentSlide ++;  
+         if(currentSlide === $slides.length)  
+         {  
+                $sliderAnimation.css('margin-left', 0);  
+                currentSlide = 1;  
+         }  
+     });  
+    });  
+});  
+</script>
+</body>
+</html>

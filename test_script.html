@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .parent {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.child {
+  align-self: flex-end;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+}
+
+/* body > p {
+ color: #000000;
+} */
+div {
+  width: 50px;
+  height: 100px;
+  padding: 25px;
+}
+
+#elem1 {
+  box-sizing: border-box;
+  background-color: blue;
+}
+
+#elem2 {
+  background-color: red;
+} 
+.a ~ .b {
+           background-color: yellow;
+}
+
+p {  
+    background-color: lightgrey;  
+}  
+p.padding {  
+    padding: 100px;
+    padding-left: 10px; 
+    padding: 50px;
+    padding-right: 20px;
+}  
+</style>
+</head>
+<body>
+        &gt;div id = &apos;char&amp;word&apos;&lt;
+    <!-- <p>sfrefgdsf</p>
+    <div>
+        <p>sdsad</p>
+        <button type="button" name="Test" value="Test">Test</button>
+    </div>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+
+    <label for="sport">What's sport do you follow ?</label>
+<input list="sportlist" type="text" id="sport" name="sport" />
+<datalist id="sportlist">
+<option label="Cricket" value="Cricket" />
+<option label="Volleyball" value="Volleyball" />
+<option label="Football" value="Football" />
+<option label="Yak Polo" value="Yak Polo " />
+</datalist>
+ -->
+<!-- <div>
+    <div id="elem1"></div>
+    <div id="elem2"></div>
+</div> -->
+<p>dr</p>
+<ul>
+        <li class="b">1st</li>
+        <li class="a">2nd</li>
+        <li>3rd</li>
+        <li class="b">4th</li>
+        <li class="b">5th</li>
+      </ul>
+    <script src="jquery-3.4.1.min.js"></script>
+<script>
+    $('div').on('click', function(){
+        console.log('div clicked');
+    });
+    $('button').on('click', function(){
+        console.log('button clicked');
+    });
+
+</script>
+</body>
+</html>

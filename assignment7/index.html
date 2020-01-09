@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 7</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<style>
+.btn_class{
+    display: inline-block;
+    margin-right:15px;
+}
+</style>
+<body>
+
+<!--Build jQuery Mobile Form, with most used input type and fields -->
+
+<div data-role="page">
+    <div data-role="header">
+        <h1>Assignment 7 : jQuery Mobile Form</h1>
+    </div>
+    <div data-role="content">
+        <form>
+            <label for="name">Enter First Name<input type="text" name="Name" id="name"/></label>
+            <label for="lname">Enter Last Name<input type="text" name="LastName" id="lname"/></label>
+            <label for="pwd">Enter Password<input type="password" name="Password" id="pwd"/></label>
+            <label for="desc">Describe Yourself<textarea name="description" id="desc" rows="3"></textarea></label>
+
+            <input type="button" class="btn btn-success" value="submit" id="submit"/>
+            <input type="button" class="btn btn-success" value="reset" id="reset"/>
+        </form>
+
+        <a href="#demo-page">Click to view Navigation Slide demo</button>
+    </div>
+    <div data-role="footer">
+        <h2>Footer</h2>
+    </div>
+</div>
+
+<!--Develop jQuery Mobile Side Navigation, likeNative mobile slide navigation -->
+
+<div data-role="page" id="demo-page" data-theme="d" data-url="demo-page">
+    <div data-role="header" data-theme="b">
+        <h1>Swipe left or right</h1>
+        <a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+        <a href="#right-panel" data-theme="d" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open right panel</a>
+    </div><!-- /header -->
+    <div data-role="content">
+        <dl>
+            <dt>Swipe <span>verb</span></dt>
+            <dd><b>1.</b> to strike or move with a sweeping motion</dd>
+        </dl>
+        <a href="#demo-intro" data-rel="back" class="back-btn" data-role="button" data-mini="true" data-inline="true" data-icon="back" data-iconpos="right">Back to demo intro</a>
+    </div><!-- /content -->
+    <div data-role="panel" id="left-panel" data-theme="b">
+        <p>Left reveal panel.</p>
+        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+    </div><!-- /panel -->
+    <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="c">
+        <p>Right push panel.</p>
+        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+    </div><!-- /panel -->
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="../bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+</body>
+</html>
